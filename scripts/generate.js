@@ -24,14 +24,17 @@ const doStuff = async () => {
     "\n📋 Copy the following to the clipboard and then press [Enter]:"
   );
   prompt("👉 Example input...");
-  const exampleInput = clipboard.readSync();
+  const exampleInput = clipboard.readSync().trimEnd();
 
   prompt("👉 Example output...");
   const exampleOutputString = clipboard.readSync();
   const exampleOutput = validateNumber(exampleOutputString, "Example output");
 
   prompt("👉 Riddle input...");
-  const input = clipboard.readSync().replace(/[`$\\]/g, (c) => "\\" + c);
+  const input = clipboard
+    .readSync()
+    .replace(/[`$\\]/g, (c) => "\\" + c)
+    .trimEnd();
 
   validateIntention(day, exampleInput, exampleOutput, input);
 
