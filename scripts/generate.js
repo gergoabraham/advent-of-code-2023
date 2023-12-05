@@ -53,7 +53,10 @@ const doStuff = async () => {
   }
 };
 
-const CODE_FILE = `module.exports = (input) => {
+const CODE_FILE = `/**
+* @param {string} input
+*/
+module.exports = (input) => {
   return input;
 };
 `;
