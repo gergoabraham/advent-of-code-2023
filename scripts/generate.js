@@ -39,7 +39,7 @@ const doStuff = async () => {
   validateIntention(day, exampleInput, exampleOutput, input);
 
   const test1 = generateTestFileContent(day, "i", exampleInput, exampleOutput);
-  const test2 = generateTestFileContent(day, "ii", exampleInput, '"?"');
+  const test2 = generateTestFileContent(day, "ii", exampleInput, "0");
 
   try {
     fs.writeFileSync(fileNames.input, generateInputFileContent(input));
