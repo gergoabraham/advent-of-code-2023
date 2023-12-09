@@ -1,5 +1,5 @@
 const solver = require("./7i");
-const puzzleInput = require("../inputs/7");
+const puzzleInput = require("./7.input");
 
 const input = `32T3K 765
 T55J5 684
