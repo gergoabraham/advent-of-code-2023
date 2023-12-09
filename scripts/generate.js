@@ -11,11 +11,11 @@ const doStuff = async () => {
   validateNumber(day, "Day");
 
   const fileNames = {
-    input: `./inputs/${day}.js`,
-    task1: `./src/${day}i.js`,
-    test1: `./src/${day}i.test.js`,
-    task2: `./src/${day}ii.js`,
-    test2: `./src/${day}ii.test.js`,
+    input: `./src/${day}/${day}.input.js`,
+    task1: `./src/${day}/${day}i.js`,
+    test1: `./src/${day}/${day}i.test.js`,
+    task2: `./src/${day}/${day}ii.js`,
+    test2: `./src/${day}/${day}ii.test.js`,
   };
 
   checkForExistingFiles(fileNames);
@@ -42,7 +42,8 @@ const doStuff = async () => {
   const test2 = generateTestFileContent(day, "ii", exampleInput, "0");
 
   try {
-    fs.writeFileSync(fileNames.input, generateInputFileContent(input));
+    fs.mkdirSync(`./src/${day}`);
+    fs.writeFileSync(fileNames.input, generateInputFileContent(input), {});
     fs.writeFileSync(fileNames.task1, CODE_FILE);
     fs.writeFileSync(fileNames.task2, CODE_FILE);
     fs.writeFileSync(fileNames.test1, test1);

@@ -12,8 +12,8 @@
     "prompt-sync": "^4.2.0"
   },
   "scripts": {
-    "test": "mocha src --watch --require setupTests.js",
-    "testday": "mocha src --watch --require setupTests.js --grep",
+    "test": "mocha src/** --watch --require setupTests.js",
+    "testday": "mocha src/** --watch --require setupTests.js --grep",
     "solve": "node scripts/solve.js",
     "generate": "node scripts/generate.js"
   }
