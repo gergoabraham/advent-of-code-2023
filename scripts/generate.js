@@ -24,7 +24,10 @@ const doStuff = async () => {
     "\n📋 Copy the following to the clipboard and then press [Enter]:"
   );
   prompt("👉 Example input...");
-  const exampleInput = clipboard.readSync().trimEnd();
+  const exampleInput = clipboard
+    .readSync()
+    .replace(/[`$\\]/g, (c) => "\\" + c)
+    .trimEnd();
 
   prompt("👉 Example output...");
   const exampleOutputString = clipboard.readSync();
