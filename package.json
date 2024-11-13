@@ -13,8 +13,8 @@
   },
   "scripts": {
     "test": "mocha src/** --watch --require setupTests.js",
-    "testday": "mocha src/** --watch --require setupTests.js --grep",
-    "solve": "node scripts/solve.js",
+    "testday": "node --stack-size=8000 node_modules/mocha/bin/_mocha src/** --watch --require setupTests.js --grep",
+    "solve": "node --stack-size=8000 scripts/solve.js",
     "generate": "node scripts/generate.js"
   }
 }
